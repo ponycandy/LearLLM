@@ -1,0 +1,18 @@
+import torch
+from GPTModel import GPTModel
+
+GPT_CONFIG_124M = {
+    "vocab_size": 50257,  # Vocabulary size
+    "ctx_len": 256,  # Context length
+    "emb_dim": 768,  # Embedding dimension
+    "n_heads": 12,  # Number of attention heads
+    "n_layers": 12,  # Number of layers
+    "drop_rate": 0.1,  # Dropout rate
+    "qkv_bias": False,  # Query-Key-Value bias
+"context_length": 256, #A
+}
+
+torch.manual_seed(123)
+
+model = GPTModel(GPT_CONFIG_124M)
+model.eval()
